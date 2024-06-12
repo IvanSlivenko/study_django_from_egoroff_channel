@@ -1,0 +1,2 @@
+# study_django_from_egoroff_channel
+study_django_from_egoroff_channel
