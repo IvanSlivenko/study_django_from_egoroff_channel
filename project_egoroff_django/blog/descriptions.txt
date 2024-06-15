@@ -1,0 +1,9 @@
+python manage.py runserver
+
+ctrl + C
+
+
+python manage.py startapp app
+
+Lesson 7
+03 : 09

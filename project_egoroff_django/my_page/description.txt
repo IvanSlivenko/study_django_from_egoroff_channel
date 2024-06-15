@@ -1,0 +1,46 @@
+--------------------------------------
+url config
+
+1 from django.urls import path, include
+
+------------------------------------------
+add configuration
+
+-----------------------------------------
+dynamic URL routing Django
+
+1 in horoscope/urls.py - > urlatterns -> patch('<sign_zodiac>' , views.func)
+2 in wiews add func -> def func_name(request, sign_zodiac):
+    body func
+
+00 :  00
+-----------------------------------------
+Path converter Django
+
+dict->
+{key - value}
+
+
+patch('<str:sign_zodiac>/', wiews.func)
+00 : 00
+
+-------------------------------------------
+redirect url in django
+
+dict.keys() - отримати всі ключі словника
+list(dict) - перетворюємо словник в список
+list(dict.keys()) - перетворюємо словник в список ключів
+
+
+return HttpResponseRedirect(f'/horoscope/{name_zodiac}') - Створюємо url
+
+----------------------------------------------
+reverse function in django
+
+from django.urls import  reverse
+
+reverse('horoscope-name',args = name_zodiac)
+
+
+
+
