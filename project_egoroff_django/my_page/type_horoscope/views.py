@@ -1,14 +1,12 @@
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
-from django.template.loader import render_to_string
-from dataclasses import  dataclass
 
 # Create your views here.
 
 zodiac_dict = {
     'aries': 'Овен - March 21 — April 20',
-    'taurus': 'Телець - April 21 — May 22 ',
+    'taurus': 'Телець - April 21 — May 22',
     'gemini': 'Близнюки - May 23 — June 21',
     'cancer': 'Рак - June 22 — July 22',
     'leo': 'Лев - July 23 — August 22',
@@ -45,55 +43,13 @@ def index(request):
         """
     return HttpResponse(response)
 
-def index_render(request):
-    zodiacs = list(zodiac_dict)#переводимо зі словника в список
-    # f"<li> <a href='{redirect_patch}'>{sign.title()} </a> </li>"
-
-
-    data = {
-        'zodiacs': zodiacs
-    }
-
-    return render(request,'horoscope/index.html', context=data)
-@dataclass
-class Person:
-    name: str
-    age: int
-
-    def __str__(self):
-        return  f'This is {self.name}'
-
-#------------------------------------------------------------------------------
-# def get_info_about_sign_zodiac(request, sign_zodiac: str):
-#     # zodiac_dict.get(key, None)
-#     description = zodiac_dict.get(sign_zodiac, None)
-#     if description:
-#         return HttpResponse(f'<h2>{description}</h2>')
-#     else:
-#         return HttpResponseNotFound(f'Невідомий знак зодіака - {sign_zodiac}')
-#-------------------------------------------------------------------------------
 def get_info_about_sign_zodiac(request, sign_zodiac: str):
-
-
-
+    # zodiac_dict.get(key, None)
     description = zodiac_dict.get(sign_zodiac, None)
-    # response = render_to_string('horoscope/info_zodiac.html')
-    data = {
-        # 'sign': sign_zodiac.title(), #title() --- змінює першу букву на велику
-        'sign': sign_zodiac,  # title() --- змінює першу букву на велику
-        'description_zodiac': description,
-        'my_int': 111,
-        'my_float': 111.5,
-        'my_list': [1, 2, 3],
-        'my_typle': (1, 2, 3, 4, 5),
-        'my_dict': {'name': 'Jack', 'age': 40},
-        'my_class': Person('Will', 55),
-        'value': 100,
-
-
-    }
-    return render(request,'horoscope/info_zodiac.html', context=data)
-
+    if description:
+        return HttpResponse(f'<h2>{description}</h2>')
+    else:
+        return HttpResponseNotFound(f'Невідомий знак зодіака - {sign_zodiac}')
 
 def get_info_about_sign_zodiac_by_number(request, sign_zodiac: int):
     zodiacs = list(zodiac_dict)

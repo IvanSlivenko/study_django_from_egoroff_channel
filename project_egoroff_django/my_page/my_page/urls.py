@@ -23,21 +23,7 @@ from horoscope import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('horoscope/', include('horoscope.urls')),
+    path('types/', include('type_horoscope.urls')),#types/
+    path('horoscope/', include('horoscope.urls')),#horoscope/
 ]
 
-# my_list = [
-#     Aries,
-#     Taurus,
-#     Gemini,
-#     Cancer,
-#     Leo,
-#     Virgo,
-#     Libra,
-#     Scorpio,
-#     Sagittarius,
-#     Capricorn,
-#     Aquarius,
-#     Pisces,
-#
-# ]
