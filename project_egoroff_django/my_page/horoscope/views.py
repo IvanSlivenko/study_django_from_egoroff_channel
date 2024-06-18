@@ -51,10 +51,28 @@ def index_render(request):
 
 
     data = {
-        'zodiacs': zodiacs
+        'zodiacs': zodiacs,
+        'zodiac_dict': zodiac_dict,
+
     }
 
     return render(request,'horoscope/index.html', context=data)
+
+
+def index_study_render(request):
+    zodiacs = list(zodiac_dict)#переводимо зі словника в список
+    # f"<li> <a href='{redirect_patch}'>{sign.title()} </a> </li>"
+
+
+    data = {
+        'zodiacs': zodiacs,
+        'zodiac_dict': zodiac_dict,
+
+    }
+
+    return render(request,'horoscope/index_study.html', context=data)
+
+
 @dataclass
 class Person:
     name: str

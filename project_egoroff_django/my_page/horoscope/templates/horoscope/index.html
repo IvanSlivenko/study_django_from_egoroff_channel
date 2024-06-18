@@ -1,40 +1,43 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Меню</title>
-</head>
-<body>
+{% extends "horoscope/base.html" %}
+
+{% block title %}
+    Меню
+{% endblock  %}
+
+{% block content %}
+
+{% include "includes/navbar.html" %}
 <p>------------------- zodiacs----------------</p>
 
-{%for element in zodiacs %}
-    <li>{{ element|title }}</li>
-{% endfor %}
+    {%for element in zodiacs %}
+    <!--href без / на початку  додається до попередньої адреси- -->
+    <!--href з / на початку  будується нова адреса- -->
 
-<p>-------------------- forloop.counter -----------------------------------</p>
+    <!--Варіант 1-->
+    <!--    <li><a href="/horoscope/{{element}}">{{ element|title }}</a></li>-->
 
-{%for element in zodiacs %}
-    <li>{{ forloop.counter }} {{ element|title }}</li>
-{% endfor %}
+    <!--Варіант 2    -->
+    <!--<li><a href="{{element}}">{{ element|title }}</a></li>-->
 
-<p>------------------- forloop.counter 0 ------------------------------------</p>
+    <!--Варіант 3    -->
+    <li><a href="{% url 'horoscope-name' sign_zodiac=element %}">{{ element|title }}</a></li>
 
-{%for element in zodiacs %}
-    <li>{{ forloop.counter0 }} {{ element|title }}</li>
-{% endfor %}
+    {% endfor %}
 
-<p>------------------- forloop.first ------------------------------------</p>
+{% include "includes/navbar.html" %}
 
-{%for element in zodiacs %}
-    {% if forloop.first  %}
-        <li><b>{{ forloop.counter0 }} {{ element|title }}</b></li>
-    {% elif forloop.last  %}
-        <li style="color:red">{{ forloop.counter0 }} {{ element|title }}</li>
-    {% else %}
-        <li>{{ forloop.counter0 }} {{ element|title }}</li>
-    {% endif%}
-{% endfor %}
+{% endblock %}
 
 
 
-</body>
-</html>
+<!--&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Меню</title>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--</body>-->
+<!--</html>-->
+<!--&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->

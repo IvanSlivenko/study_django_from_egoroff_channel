@@ -4,8 +4,9 @@ from . import views
 urlpatterns = [
     path('', views.index),#horoscope
     path('menu', views.index_render),#horoscope/menu
+    path('study', views.index_study_render),#horoscope/study
     path('<int:sign_zodiac>', views.get_info_about_sign_zodiac_by_number), #варіант 1
-    path('<str:sign_zodiac>', views.get_info_about_sign_zodiac, name='horoscope-name'),
+    path('<str:sign_zodiac>', views.get_info_about_sign_zodiac, name='horoscope-name'),#/horoscope
 
 ]
 

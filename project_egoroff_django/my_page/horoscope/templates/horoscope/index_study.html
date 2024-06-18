@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Меню</title>
+</head>
+<body>
+<p>------------------- zodiacs----------------</p>
+
+{%for element in zodiacs %}
+    <li>{{ element|title }}</li>
+{% endfor %}
+
+<p>-------------------- forloop.counter -----------------------------------</p>
+
+{%for element in zodiacs %}
+    <li>{{ forloop.counter }} {{ element|title }}</li>
+{% endfor %}
+
+<p>------------------- forloop.counter 0 ------------------------------------</p>
+
+{%for element in zodiacs %}
+    <li>{{ forloop.counter0 }} {{ element|title }}</li>
+{% endfor %}
+
+<p>------------------- forloop.first ------------------------------------</p>
+
+{%for element in zodiacs %}
+    {% if forloop.first  %}
+        <li><b>{{ forloop.counter0 }} {{ element|title }}</b></li>
+    {% elif forloop.last  %}
+        <li style="color:red">{{ forloop.counter0 }} {{ element|title }}</li>
+    {% else %}
+        <li>{{ forloop.counter0 }} {{ element|title }}</li>
+    {% endif%}
+{% endfor %}
+
+<p>------------------- zodiac_dict.items ------------------------------------</p>
+
+{% for key, value  in zodiac_dict.items %}
+    <p>{{key}} : {{value}}</p>
+{% endfor %}
+
+<p>------------------- zodiac_dict.items reversed------------------------------------</p>
+
+{% for key, value  in zodiac_dict.items reversed %}
+    <p>{{key}} : {{value}}</p>
+{% endfor %}
+
+<p>------------------- zodiac_dict.items empty------------------------------------</p>
+
+{% for key, value  in zodiac_dict.items %}
+    <p>{{key}} : {{value}}</p>
+{% empty%}#------------- відпрацьовує, коли нам передана пуста колекція
+    <p>Вибачте потрібні значення не знайдено</p>
+
+{% endfor %}
+
+
+
+</body>
+</html>
