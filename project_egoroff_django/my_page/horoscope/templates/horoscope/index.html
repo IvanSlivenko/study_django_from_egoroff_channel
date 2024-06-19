@@ -6,7 +6,7 @@
 
 {% block content %}
 
-{% include "includes/navbar.html" %}
+{% include "includes/navbar.html" only with a=100 b=200 %}
 <p>------------------- zodiacs----------------</p>
 
     {%for element in zodiacs %}

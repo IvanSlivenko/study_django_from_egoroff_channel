@@ -1,5 +1,13 @@
 <nav>
-        <a href="/horoscope">Головна</a> |
+        <a href="{%url 'horoscope-index'%}">Головна</a> |
+        <a href="{%url 'horoscope-index_render'%}">Головна_menu</a> |
+        <a href="{%url 'horoscope-index_study_render'%}">Головна_study</a> |
+        <a href="/types">Головна_types</a> |
         <a href="https://docs.djangoproject.com/en/5.0/ref/templates/language/#tags">Джерело</a>
+        {%for element in zodiacs %}
+                | <a href="{% url 'horoscope-name' sign_zodiac=element %}">{{ element|title }}</a>
+        {% endfor %}
 
 </nav>
+
+

@@ -1,31 +1,13 @@
 {% extends "horoscope/base.html" %}
 
 {% block content %}
-    {% include "includes/navbar.html" %}
+    {% include "includes/navbar.html" only %}
+
     <h1>Додаток Гороскоп</h1>
     <h2> Англійська назва : {{ sign|capfirst }}</h2>
     <h2> Англійська назва великими буквами: {{ sign|upper }}</h2>
     <h2> Опис : {{ description_zodiac|title }}</h2>
-    <p>--------------------- Числа -------------</p>
-    <p>Ціле число : {{my_int}}</p>
-    <p>Ціле число  з коригуванням: {{my_int|add:"2"}}</p>
-    <p>Число з плаваючою комою : {{my_float}}</p>
-    <p>Число з плаваючою комою плюс ціле число : {{my_float|add:my_int}}</p>
-    <p>--------------------- Cписки -------------</p>
-    <p>Список : {{my_list}}</p>
-    <p>Список після join : {{my_list|join:":"}}</p>
-    <p>Перший зі списку : {{my_list|first}}</p>
-    <p>Останій зі списку : {{my_list|last}}</p>
-    <p>--------------------- Кортежі -------------</p>
-    <p>Кортеж : {{my_typle}}</p>
-    <p>Кортеж після join: {{my_typle|join:":"}}</p>
-    <p>Перший з кортежу : {{my_typle|first}}</p>
-    <p>Останій з кортежу : {{my_typle|last}}</p>
-    <p>--------------------- Cловники -------------</p>
-    <p>Словник : {{my_dict}},  ім'я - {{my_dict.name}},  вік - {{my_dict.age}}</p>
-    <p>--------------------- Класи -------------</p>
-    <p>Екземпляр класа : {{my_class}},  вік - {{my_class.age}}</p>
-    <p>default {{ value|default:"test" }}</p>
+
 {% endblock  %}
 </body>
 </html>
