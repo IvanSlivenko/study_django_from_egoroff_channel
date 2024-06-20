@@ -1,0 +1,48 @@
+
+ul {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    list-style-type: none;
+    background-color: #f1f1f1;
+    width: 90%;
+    max-width: 50%;
+    border-radius: 20px;
+    margin: 2rem auto;
+    padding: 2rem ;
+
+}
+
+ul li {
+    text-align: center;
+    width: 90%;
+    font-size: 3rem;
+    padding: 2rem 1rem;
+    color: #e8dede;
+
+}
+
+li a {
+    text-decoration: none;
+    list-style: none;
+    color: gray;
+
+
+}
+
+
+li a:hover, li a:active {
+    color: #2c2c2c;
+    text-decoration: underline;
+    font-size: 55px;
+
+}
+
+h1 {
+    color: #e8dede;
+    text-align: center;
+    font-family: "Andale Mono", Andale Mono monospace;
+    font-size: 48px;
+    text-decoration: none;
+
+}

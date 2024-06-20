@@ -6,6 +6,21 @@
 <body>
 <p>------------------- zodiacs----------------</p>
 
+<!--{%for element in zodiacs %}-->
+<!--    &lt;!&ndash;href без / на початку  додається до попередньої адреси- &ndash;&gt;-->
+<!--    &lt;!&ndash;href з / на початку  будується нова адреса- &ndash;&gt;-->
+
+<!--    &lt;!&ndash;Варіант 1&ndash;&gt;-->
+<!--    &lt;!&ndash;    <li><a href="/horoscope/{{element}}">{{ element|title }}</a></li>&ndash;&gt;-->
+
+<!--    &lt;!&ndash;Варіант 2    &ndash;&gt;-->
+<!--    &lt;!&ndash;<li><a href="{{element}}">{{ element|title }}</a></li>&ndash;&gt;-->
+
+<!--    &lt;!&ndash;Варіант 3    &ndash;&gt;-->
+<!--    <li><a href="{% url 'horoscope-name' sign_zodiac=element %}">{{ element|title }}</a></li>-->
+
+<!--{% endfor %}-->
+
 {%for element in zodiacs %}
     <li>{{ element|title }}</li>
 {% endfor %}

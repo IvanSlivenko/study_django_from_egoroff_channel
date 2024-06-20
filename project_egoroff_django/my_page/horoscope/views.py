@@ -73,11 +73,14 @@ def index_study_render(request):
 def get_info_about_sign_zodiac(request, sign_zodiac: str):
 
     description = zodiac_dict.get(sign_zodiac, None)
+    zodiacs = list(zodiac_dict)  # переводимо зі словника в список
     # response = render_to_string('horoscope/info_zodiac.html')
     data = {
         # 'sign': sign_zodiac.title(), #title() --- змінює першу букву на велику
         'sign': sign_zodiac,  # title() --- змінює першу букву на велику
         'description_zodiac': description,
+        'sign_name': description.split()[0], # створюємо список слів, що розділені пробілами, та отримуємо перше слово
+        'zodiacs' : zodiacs,
 
     }
     return render(request,'horoscope/info_zodiac.html', context=data)

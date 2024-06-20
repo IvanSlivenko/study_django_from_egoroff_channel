@@ -1,12 +1,14 @@
-{% extends "horoscope/base.html" %}
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_additional %}
+<link rel="stylesheet" href="{% static 'horoscope/css/info.css' %}">
+{% endblock %}
 
 {% block content %}
-    {% include "includes/navbar.html" only %}
-
-    <h1>Додаток Гороскоп</h1>
-    <h2> Англійська назва : {{ sign|capfirst }}</h2>
-    <h2> Англійська назва великими буквами: {{ sign|upper }}</h2>
-    <h2> Опис : {{ description_zodiac|title }}</h2>
+    {% include "includes/navbar.html" %}
+    <h1>{{ sign_name | title }}</h1>
+    <h2> {{ description_zodiac|title }}</h2>
 
 {% endblock  %}
 </body>
