@@ -1,0 +1,40 @@
+DDL - data definition language
+-----------------------------------
+select - вибрати інформацію з таблиці
+insert - додаємо значення в готову таблицю
+update - змінюємо значення запису, що існує
+delete - видалення запису
+=====================================
+
+DML - data manipulation language
+-----------------------------------------
+create - створюємо пусту таблицю
+alter
+drop
+========================================
+
+DCL - data control language
+----------------------------
+grant
+revoke
+
+TCL - Transaction control language
+----------------------------------
+begin
+tran
+commit
+tran
+rollback
+====================================
+
+ORM
+
+object
+relation
+mapping
+
+Створюємо новий проект
+django-admin startproject movie_project
+
+
+
